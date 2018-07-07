@@ -8,49 +8,9 @@
 
 #import "LWShowView.h"
 #import <Masonry.h>
+#import "LWShowViewManager.h"
+
 static LWShowView *showView = nil;
-
-
-@interface LWShowViewManager: NSObject
-@property (nonatomic, strong) UIView *showView;
-@end
-
-
-@implementation LWShowViewManager
-
-- (void)show
-{
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    [window addSubview:self.showView];
-    [self.showView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(window);
-    }];
-    NSLog(@"%@",[self class]);
-}
-
-
-- (void)showInView:(UIView *)aView
-{
-    [aView addSubview:self.showView];
-    [self.showView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(aView);
-    }];
-    NSLog(@"%@",aView);
-}
-
-- (void)showInViewController:(UIViewController *)aViewController
-{
-    [aViewController.view addSubview:self.showView];
-    [self.showView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(aViewController.view);
-    }];
-    NSLog(@"%@",aViewController);
-
-}
-@end
-
-
-
 
 @interface LWShowView()
 @property (nonatomic, strong) LWShowViewManager *manager;
@@ -92,13 +52,11 @@ static LWShowViewManager *manager;
     NSString *selName = NSStringFromSelector(anInvocation.selector);
     Class cls = anInvocation.target;
     UIView *showV = (UIView *)[[cls alloc] init];
-    manager.showView = showV;
+//    manager.showView = showV;
     if ([selName isEqualToString:@"show"]) {
         //类方法是通过类名进行调用的
-        manager.showView = showV;
         [anInvocation invokeWithTarget:manager];
     } else if ([selName isEqualToString:@"showInView:"]) {
-        manager.showView = showV;
         [anInvocation invokeWithTarget:manager];
     } else if ([selName isEqualToString:@"showInViewController:"]) {
         [anInvocation invokeWithTarget:manager];

@@ -20,6 +20,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self setUpSubview];
+        self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
     }
     return self;
 }
@@ -27,7 +28,9 @@
 - (void)setUpSubview
 {
     [self.iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
+        make.width.height.equalTo(@100);
+        make.centerX.equalTo(self.mas_centerX);
+        make.centerY.equalTo(self.mas_centerY);
     }];
 }
 

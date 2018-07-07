@@ -20,6 +20,7 @@
 		EBC7408220F064F7006B761A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBC7407D20F064F7006B761A /* Info.plist */; };
 		EBC7408620F06535006B761A /* LWShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7408520F06535006B761A /* LWShowView.m */; };
 		EBC7408A20F0772B006B761A /* LWShowViewTest1.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7408920F0772B006B761A /* LWShowViewTest1.m */; };
+		EBC7408D20F0C1FA006B761A /* LWShowViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7408C20F0C1FA006B761A /* LWShowViewManager.m */; };
 		F9FFB4CD61B6F01A6E5ABA01 /* libPods-LWShowViewUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8AD35320C444F058A534F3 /* libPods-LWShowViewUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,8 @@
 		EBC7408720F06552006B761A /* LWShowViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowViewProtocol.h; sourceTree = "<group>"; };
 		EBC7408820F0772B006B761A /* LWShowViewTest1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowViewTest1.h; sourceTree = "<group>"; };
 		EBC7408920F0772B006B761A /* LWShowViewTest1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWShowViewTest1.m; sourceTree = "<group>"; };
+		EBC7408B20F0C1FA006B761A /* LWShowViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowViewManager.h; sourceTree = "<group>"; };
+		EBC7408C20F0C1FA006B761A /* LWShowViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWShowViewManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 				EBC7408420F06535006B761A /* LWShowView.h */,
 				EBC7408520F06535006B761A /* LWShowView.m */,
 				EBC7408720F06552006B761A /* LWShowViewProtocol.h */,
+				EBC7408B20F0C1FA006B761A /* LWShowViewManager.h */,
+				EBC7408C20F0C1FA006B761A /* LWShowViewManager.m */,
 			);
 			path = LWShowView;
 			sourceTree = "<group>";
@@ -483,6 +488,7 @@
 				EBC7408120F064F7006B761A /* main.m in Sources */,
 				EBC7408A20F0772B006B761A /* LWShowViewTest1.m in Sources */,
 				EBC7408620F06535006B761A /* LWShowView.m in Sources */,
+				EBC7408D20F0C1FA006B761A /* LWShowViewManager.m in Sources */,
 				EBC7404620F064B8006B761A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,7 +662,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = "$(SRCROOT)/LWShowView/SupportingFiles/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -671,7 +680,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = "$(SRCROOT)/LWShowView/SupportingFiles/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -686,7 +698,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = LWShowViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -702,7 +718,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = LWShowViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -717,7 +737,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = LWShowViewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -732,7 +756,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = LWShowViewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

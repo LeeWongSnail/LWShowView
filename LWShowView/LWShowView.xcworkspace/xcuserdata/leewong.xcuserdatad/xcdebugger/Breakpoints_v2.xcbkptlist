@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LWShowView/LWShowView/LWShowView.m"
-            timestampString = "552646693.526377"
+            timestampString = "552652725.112267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-showInView:"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "+forwardInvocation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LWShowView/LWShowView/LWShowViewManager.m"
+            timestampString = "552652747.030883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-showInViewController:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
