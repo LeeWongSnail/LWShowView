@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-
+#import "LWShowViewTest1.h"
+#import "LWShowView.h"
 @interface ViewController ()
-
+@property (nonatomic, strong) LWShowViewTest1 *testView;
 @end
 
 @implementation ViewController
@@ -17,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [LWShowViewTest1 showInViewController:self];
 }
 
 
@@ -24,6 +26,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 
 @end

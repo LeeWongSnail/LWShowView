@@ -7,50 +7,111 @@
 //
 
 #import "LWShowView.h"
-
+#import <Masonry.h>
 static LWShowView *showView = nil;
+
+
+@interface LWShowViewManager: NSObject
+@property (nonatomic, strong) UIView *showView;
+@end
+
+
+@implementation LWShowViewManager
+
+- (void)show
+{
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:self.showView];
+    [self.showView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(window);
+    }];
+    NSLog(@"%@",[self class]);
+}
+
+
+- (void)showInView:(UIView *)aView
+{
+    [aView addSubview:self.showView];
+    [self.showView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(aView);
+    }];
+    NSLog(@"%@",aView);
+}
+
+- (void)showInViewController:(UIViewController *)aViewController
+{
+    [aViewController.view addSubview:self.showView];
+    [self.showView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(aViewController.view);
+    }];
+    NSLog(@"%@",aViewController);
+
+}
+@end
+
+
+
+
+@interface LWShowView()
+@property (nonatomic, strong) LWShowViewManager *manager;
+@end
+
+
+static LWShowViewManager *manager;
 
 @implementation LWShowView
 
-+ (LWShowView *)showView
++ (void)initialize
 {
-    if (showView == nil) {
-        showView = [[self alloc]  initWithFrame:[UIScreen mainScreen].bounds];
+    [self shareManager];
+}
+
++ (LWShowViewManager *)shareManager
+{
+    if (manager == nil) {
+        manager = [[LWShowViewManager alloc] init];
     }
-    return showView;
+    return manager;
 }
 
-
-
-
-+ (void)show
+//跟对象方法对应的类方法
++ (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
-    [self showView];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    [window addSubview:showView];
+    NSMethodSignature *signature = [super methodSignatureForSelector:aSelector];
+    if (!signature) {
+        if ([LWShowViewManager respondsToSelector:aSelector]) {
+            signature = [LWShowViewManager methodSignatureForSelector:aSelector];
+        }
+    }
+    return signature;
 }
 
-+ (void)showInView:(UIView *)aView
+//跟对象方法对应的类方法
++ (void)forwardInvocation:(NSInvocation *)anInvocation
 {
+    NSString *selName = NSStringFromSelector(anInvocation.selector);
+    Class cls = anInvocation.target;
+    UIView *showV = (UIView *)[[cls alloc] init];
+    manager.showView = showV;
+    if ([selName isEqualToString:@"show"]) {
+        //类方法是通过类名进行调用的
+        manager.showView = showV;
+        [anInvocation invokeWithTarget:manager];
+    } else if ([selName isEqualToString:@"showInView:"]) {
+        manager.showView = showV;
+        [anInvocation invokeWithTarget:manager];
+    } else if ([selName isEqualToString:@"showInViewController:"]) {
+        [anInvocation invokeWithTarget:manager];
+    }
     
 }
 
-+ (void)showInViewController:(UIViewController *)aViewController
+- (LWShowViewManager *)manager
 {
-    
-}
-
-#pragma mark - Build UI
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    if (self = [super initWithFrame:frame]) {
-        [self setUpSubview];
+    if (_manager == nil) {
+        _manager = [[LWShowViewManager alloc] init];
     }
-    return self;
+    return _manager;
 }
-
-- (void)setUpSubview
-{}
 
 @end
