@@ -21,9 +21,13 @@ static LWShowView *showView = nil;
 }
 
 
+
+
 + (void)show
 {
-    
+    [self showView];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:showView];
 }
 
 + (void)showInView:(UIView *)aView
@@ -35,5 +39,18 @@ static LWShowView *showView = nil;
 {
     
 }
+
+#pragma mark - Build UI
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self setUpSubview];
+    }
+    return self;
+}
+
+- (void)setUpSubview
+{}
 
 @end

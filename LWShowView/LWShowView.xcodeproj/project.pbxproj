@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		336A1E39E0203E01415389D1 /* libPods-LWShowView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E10849897390118E03CDC8D2 /* libPods-LWShowView.a */; };
+		7A1C9A495268FA69B2BBA3D7 /* libPods-LWShowViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EAE61654D5676313A05084 /* libPods-LWShowViewTests.a */; };
 		EBC7404620F064B8006B761A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7404520F064B8006B761A /* AppDelegate.m */; };
 		EBC7404920F064B8006B761A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7404820F064B8006B761A /* ViewController.m */; };
 		EBC7405E20F064B9006B761A /* LWShowViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7405D20F064B9006B761A /* LWShowViewTests.m */; };
@@ -17,6 +19,8 @@
 		EBC7408120F064F7006B761A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7407C20F064F7006B761A /* main.m */; };
 		EBC7408220F064F7006B761A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBC7407D20F064F7006B761A /* Info.plist */; };
 		EBC7408620F06535006B761A /* LWShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7408520F06535006B761A /* LWShowView.m */; };
+		EBC7408A20F0772B006B761A /* LWShowViewTest1.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7408920F0772B006B761A /* LWShowViewTest1.m */; };
+		F9FFB4CD61B6F01A6E5ABA01 /* libPods-LWShowViewUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8AD35320C444F058A534F3 /* libPods-LWShowViewUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0687FF44A00BFACDCCAD21C4 /* Pods-LWShowViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWShowViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LWShowViewTests/Pods-LWShowViewTests.release.xcconfig"; sourceTree = "<group>"; };
+		0E408217286A41F5BDCC3443 /* Pods-LWShowViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWShowViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LWShowViewTests/Pods-LWShowViewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		30CA126205AADD856611F448 /* Pods-LWShowView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWShowView.release.xcconfig"; path = "Pods/Target Support Files/Pods-LWShowView/Pods-LWShowView.release.xcconfig"; sourceTree = "<group>"; };
+		397FF0200DD53CDC43216DB8 /* Pods-LWShowViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWShowViewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LWShowViewUITests/Pods-LWShowViewUITests.release.xcconfig"; sourceTree = "<group>"; };
+		695C7FEB1D2E3D3C6B2DB52F /* Pods-LWShowView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWShowView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LWShowView/Pods-LWShowView.debug.xcconfig"; sourceTree = "<group>"; };
+		7A8AD35320C444F058A534F3 /* libPods-LWShowViewUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LWShowViewUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92EAE61654D5676313A05084 /* libPods-LWShowViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LWShowViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3BCA2EE1BC44F75D67D24E6 /* Pods-LWShowViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWShowViewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LWShowViewUITests/Pods-LWShowViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E10849897390118E03CDC8D2 /* libPods-LWShowView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LWShowView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC7404120F064B8006B761A /* LWShowView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LWShowView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC7404420F064B8006B761A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EBC7404520F064B8006B761A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +69,8 @@
 		EBC7408420F06535006B761A /* LWShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowView.h; sourceTree = "<group>"; };
 		EBC7408520F06535006B761A /* LWShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWShowView.m; sourceTree = "<group>"; };
 		EBC7408720F06552006B761A /* LWShowViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowViewProtocol.h; sourceTree = "<group>"; };
+		EBC7408820F0772B006B761A /* LWShowViewTest1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowViewTest1.h; sourceTree = "<group>"; };
+		EBC7408920F0772B006B761A /* LWShowViewTest1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWShowViewTest1.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336A1E39E0203E01415389D1 /* libPods-LWShowView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1C9A495268FA69B2BBA3D7 /* libPods-LWShowViewTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,12 +94,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FFB4CD61B6F01A6E5ABA01 /* libPods-LWShowViewUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00C59FE5E789C8326980E57D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E10849897390118E03CDC8D2 /* libPods-LWShowView.a */,
+				92EAE61654D5676313A05084 /* libPods-LWShowViewTests.a */,
+				7A8AD35320C444F058A534F3 /* libPods-LWShowViewUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2644FD523B0F81EBDC32B287 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				695C7FEB1D2E3D3C6B2DB52F /* Pods-LWShowView.debug.xcconfig */,
+				30CA126205AADD856611F448 /* Pods-LWShowView.release.xcconfig */,
+				0E408217286A41F5BDCC3443 /* Pods-LWShowViewTests.debug.xcconfig */,
+				0687FF44A00BFACDCCAD21C4 /* Pods-LWShowViewTests.release.xcconfig */,
+				B3BCA2EE1BC44F75D67D24E6 /* Pods-LWShowViewUITests.debug.xcconfig */,
+				397FF0200DD53CDC43216DB8 /* Pods-LWShowViewUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EBC7403820F064B7006B761A = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +131,8 @@
 				EBC7405C20F064B9006B761A /* LWShowViewTests */,
 				EBC7406720F064B9006B761A /* LWShowViewUITests */,
 				EBC7404220F064B8006B761A /* Products */,
+				2644FD523B0F81EBDC32B287 /* Pods */,
+				00C59FE5E789C8326980E57D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +155,8 @@
 				EBC7404720F064B8006B761A /* ViewController.h */,
 				EBC7404820F064B8006B761A /* ViewController.m */,
 				EBC7407620F064F7006B761A /* SupportingFiles */,
+				EBC7408820F0772B006B761A /* LWShowViewTest1.h */,
+				EBC7408920F0772B006B761A /* LWShowViewTest1.m */,
 			);
 			path = LWShowView;
 			sourceTree = "<group>";
@@ -163,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC7406D20F064B9006B761A /* Build configuration list for PBXNativeTarget "LWShowView" */;
 			buildPhases = (
+				19E56442B796289EBEC881C6 /* [CP] Check Pods Manifest.lock */,
 				EBC7403D20F064B7006B761A /* Sources */,
 				EBC7403E20F064B7006B761A /* Frameworks */,
 				EBC7403F20F064B7006B761A /* Resources */,
+				150A5DFEA0FDC99177694397 /* [CP] Embed Pods Frameworks */,
+				3B822CECFD281F7B577F020E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC7407020F064B9006B761A /* Build configuration list for PBXNativeTarget "LWShowViewTests" */;
 			buildPhases = (
+				FCE77FA5E2D2F0EA541790D3 /* [CP] Check Pods Manifest.lock */,
 				EBC7405520F064B9006B761A /* Sources */,
 				EBC7405620F064B9006B761A /* Frameworks */,
 				EBC7405720F064B9006B761A /* Resources */,
+				294ADC666BEFB36444282F77 /* [CP] Embed Pods Frameworks */,
+				31D0AC30330F3D0A10B8487D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,9 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC7407320F064B9006B761A /* Build configuration list for PBXNativeTarget "LWShowViewUITests" */;
 			buildPhases = (
+				66F464ADCCED30F96FB77BC4 /* [CP] Check Pods Manifest.lock */,
 				EBC7406020F064B9006B761A /* Sources */,
 				EBC7406120F064B9006B761A /* Frameworks */,
 				EBC7406220F064B9006B761A /* Resources */,
+				E18D5D5D3ADF153E9F56060F /* [CP] Embed Pods Frameworks */,
+				DB819B67A64739BD8C28899B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,6 +336,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		150A5DFEA0FDC99177694397 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LWShowView/Pods-LWShowView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19E56442B796289EBEC881C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		294ADC666BEFB36444282F77 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LWShowViewTests/Pods-LWShowViewTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31D0AC30330F3D0A10B8487D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LWShowViewTests/Pods-LWShowViewTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B822CECFD281F7B577F020E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LWShowView/Pods-LWShowView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66F464ADCCED30F96FB77BC4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DB819B67A64739BD8C28899B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LWShowViewUITests/Pods-LWShowViewUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E18D5D5D3ADF153E9F56060F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LWShowViewUITests/Pods-LWShowViewUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCE77FA5E2D2F0EA541790D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EBC7403D20F064B7006B761A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -289,6 +481,7 @@
 			files = (
 				EBC7404920F064B8006B761A /* ViewController.m in Sources */,
 				EBC7408120F064F7006B761A /* main.m in Sources */,
+				EBC7408A20F0772B006B761A /* LWShowViewTest1.m in Sources */,
 				EBC7408620F06535006B761A /* LWShowView.m in Sources */,
 				EBC7404620F064B8006B761A /* AppDelegate.m in Sources */,
 			);
@@ -457,15 +650,13 @@
 		};
 		EBC7406E20F064B9006B761A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 695C7FEB1D2E3D3C6B2DB52F /* Pods-LWShowView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = "$(SRCROOT)/LWShowView/SupportingFiles/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,15 +665,13 @@
 		};
 		EBC7406F20F064B9006B761A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30CA126205AADD856611F448 /* Pods-LWShowView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = "$(SRCROOT)/LWShowView/SupportingFiles/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,16 +680,13 @@
 		};
 		EBC7407120F064B9006B761A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E408217286A41F5BDCC3443 /* Pods-LWShowViewTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = LWShowViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -510,16 +696,13 @@
 		};
 		EBC7407220F064B9006B761A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0687FF44A00BFACDCCAD21C4 /* Pods-LWShowViewTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = LWShowViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,15 +712,12 @@
 		};
 		EBC7407420F064B9006B761A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3BCA2EE1BC44F75D67D24E6 /* Pods-LWShowViewUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = LWShowViewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -547,15 +727,12 @@
 		};
 		EBC7407520F064B9006B761A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 397FF0200DD53CDC43216DB8 /* Pods-LWShowViewUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
 				INFOPLIST_FILE = LWShowViewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lee.LWShowViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
