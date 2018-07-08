@@ -11,6 +11,10 @@
 //这个类适用于 外部不需要持有当前要弹出弹窗
 @interface LWShowView : UIView <LWShowViewProtocol>
 
++ (void)show;
 
++ (void)showInView:(UIView *)aView;
+
++ (void)showInViewController:(UIViewController *)aViewController;
 
 @end

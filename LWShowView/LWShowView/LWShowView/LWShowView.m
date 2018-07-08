@@ -52,13 +52,15 @@ static LWShowViewManager *manager;
     NSString *selName = NSStringFromSelector(anInvocation.selector);
     Class cls = anInvocation.target;
     UIView *showV = (UIView *)[[cls alloc] init];
-//    manager.showView = showV;
     if ([selName isEqualToString:@"show"]) {
         //类方法是通过类名进行调用的
+        [LWShowViewManager showView:showV dismiss:nil];
         [anInvocation invokeWithTarget:manager];
     } else if ([selName isEqualToString:@"showInView:"]) {
+        [LWShowViewManager showView:showV dismiss:nil];
         [anInvocation invokeWithTarget:manager];
     } else if ([selName isEqualToString:@"showInViewController:"]) {
+//        [LWShowViewManager show]
         [anInvocation invokeWithTarget:manager];
     }
     
