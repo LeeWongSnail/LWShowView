@@ -34,6 +34,11 @@
     }];
 }
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [LWShowView dismiss];
+}
+
 
 #pragma mark - Lazy Load
 
@@ -45,6 +50,11 @@
         [self addSubview:_iconImage];
     }
     return _iconImage;
+}
+
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
 }
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		336A1E39E0203E01415389D1 /* libPods-LWShowView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E10849897390118E03CDC8D2 /* libPods-LWShowView.a */; };
+		50F8A3B820F3643F006C5765 /* LWShowViewTest2.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F8A3B720F3643F006C5765 /* LWShowViewTest2.m */; };
 		7A1C9A495268FA69B2BBA3D7 /* libPods-LWShowViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EAE61654D5676313A05084 /* libPods-LWShowViewTests.a */; };
 		EBC7404620F064B8006B761A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7404520F064B8006B761A /* AppDelegate.m */; };
 		EBC7404920F064B8006B761A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC7404820F064B8006B761A /* ViewController.m */; };
@@ -46,6 +47,8 @@
 		0E408217286A41F5BDCC3443 /* Pods-LWShowViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWShowViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LWShowViewTests/Pods-LWShowViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		30CA126205AADD856611F448 /* Pods-LWShowView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWShowView.release.xcconfig"; path = "Pods/Target Support Files/Pods-LWShowView/Pods-LWShowView.release.xcconfig"; sourceTree = "<group>"; };
 		397FF0200DD53CDC43216DB8 /* Pods-LWShowViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWShowViewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LWShowViewUITests/Pods-LWShowViewUITests.release.xcconfig"; sourceTree = "<group>"; };
+		50F8A3B620F3643F006C5765 /* LWShowViewTest2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowViewTest2.h; sourceTree = "<group>"; };
+		50F8A3B720F3643F006C5765 /* LWShowViewTest2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWShowViewTest2.m; sourceTree = "<group>"; };
 		695C7FEB1D2E3D3C6B2DB52F /* Pods-LWShowView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWShowView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LWShowView/Pods-LWShowView.debug.xcconfig"; sourceTree = "<group>"; };
 		7A8AD35320C444F058A534F3 /* libPods-LWShowViewUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LWShowViewUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92EAE61654D5676313A05084 /* libPods-LWShowViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LWShowViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +72,6 @@
 		EBC7407D20F064F7006B761A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBC7408420F06535006B761A /* LWShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowView.h; sourceTree = "<group>"; };
 		EBC7408520F06535006B761A /* LWShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWShowView.m; sourceTree = "<group>"; };
-		EBC7408720F06552006B761A /* LWShowViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowViewProtocol.h; sourceTree = "<group>"; };
 		EBC7408820F0772B006B761A /* LWShowViewTest1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowViewTest1.h; sourceTree = "<group>"; };
 		EBC7408920F0772B006B761A /* LWShowViewTest1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LWShowViewTest1.m; sourceTree = "<group>"; };
 		EBC7408B20F0C1FA006B761A /* LWShowViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LWShowViewManager.h; sourceTree = "<group>"; };
@@ -160,6 +162,8 @@
 				EBC7407620F064F7006B761A /* SupportingFiles */,
 				EBC7408820F0772B006B761A /* LWShowViewTest1.h */,
 				EBC7408920F0772B006B761A /* LWShowViewTest1.m */,
+				50F8A3B620F3643F006C5765 /* LWShowViewTest2.h */,
+				50F8A3B720F3643F006C5765 /* LWShowViewTest2.m */,
 			);
 			path = LWShowView;
 			sourceTree = "<group>";
@@ -199,7 +203,6 @@
 			children = (
 				EBC7408420F06535006B761A /* LWShowView.h */,
 				EBC7408520F06535006B761A /* LWShowView.m */,
-				EBC7408720F06552006B761A /* LWShowViewProtocol.h */,
 				EBC7408B20F0C1FA006B761A /* LWShowViewManager.h */,
 				EBC7408C20F0C1FA006B761A /* LWShowViewManager.m */,
 			);
@@ -485,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBC7404920F064B8006B761A /* ViewController.m in Sources */,
+				50F8A3B820F3643F006C5765 /* LWShowViewTest2.m in Sources */,
 				EBC7408120F064F7006B761A /* main.m in Sources */,
 				EBC7408A20F0772B006B761A /* LWShowViewTest1.m in Sources */,
 				EBC7408620F06535006B761A /* LWShowView.m in Sources */,
@@ -660,7 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XWNPFKK4U5;
+				DEVELOPMENT_TEAM = V49S5C2LVD;
 				INFOPLIST_FILE = "$(SRCROOT)/LWShowView/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -678,7 +682,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XWNPFKK4U5;
+				DEVELOPMENT_TEAM = V49S5C2LVD;
 				INFOPLIST_FILE = "$(SRCROOT)/LWShowView/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

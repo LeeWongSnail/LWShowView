@@ -7,71 +7,99 @@
 //
 
 #import "LWShowView.h"
+#import <objc/runtime.h>
 #import <Masonry.h>
-#import "LWShowViewManager.h"
 
-static LWShowView *showView = nil;
-
-@interface LWShowView()
-@property (nonatomic, strong) LWShowViewManager *manager;
-@end
-
-
-static LWShowViewManager *manager;
+static LWShowView *shareView = nil;
 
 @implementation LWShowView
 
-+ (void)initialize
++ (LWShowView *)shareView
 {
-    [self shareManager];
+    if (shareView == nil) {
+        shareView = [[self alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    }
+    return shareView;
+}
+#pragma mark - Method
+
++ (void)show
+{
+    [self show:nil];
 }
 
-+ (LWShowViewManager *)shareManager
++ (void)show:(void (^)(UIView * showView))completion
 {
-    if (manager == nil) {
-        manager = [[LWShowViewManager alloc] init];
+    [self shareView];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:shareView];
+    [shareView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(window);
+    }];
+    if (completion) {
+        completion(shareView);
     }
-    return manager;
 }
 
-//跟对象方法对应的类方法
-+ (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+
++ (void)showInView:(UIView *)aView
 {
-    NSMethodSignature *signature = [super methodSignatureForSelector:aSelector];
-    if (!signature) {
-        if ([LWShowViewManager respondsToSelector:aSelector]) {
-            signature = [LWShowViewManager methodSignatureForSelector:aSelector];
-        }
-    }
-    return signature;
+    [self showInView:aView completion:nil];
 }
 
-//跟对象方法对应的类方法
-+ (void)forwardInvocation:(NSInvocation *)anInvocation
++ (void)showInView:(UIView *)aView completion:(void (^)(UIView * showView))aCompletion
 {
-    NSString *selName = NSStringFromSelector(anInvocation.selector);
-    Class cls = anInvocation.target;
-    UIView *showV = (UIView *)[[cls alloc] init];
-    if ([selName isEqualToString:@"show"]) {
-        //类方法是通过类名进行调用的
-        [LWShowViewManager showView:showV dismiss:nil];
-        [anInvocation invokeWithTarget:manager];
-    } else if ([selName isEqualToString:@"showInView:"]) {
-        [LWShowViewManager showView:showV dismiss:nil];
-        [anInvocation invokeWithTarget:manager];
-    } else if ([selName isEqualToString:@"showInViewController:"]) {
-//        [LWShowViewManager show]
-        [anInvocation invokeWithTarget:manager];
-    }
+    NSAssert(aView, @"aView参数不可以为空");
+    [self shareView];
+    [aView addSubview:shareView];
+    [shareView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(aView);
+    }];
     
+    if (aCompletion) {
+        aCompletion(shareView);
+    }
 }
 
-- (LWShowViewManager *)manager
+
++ (void)showInViewController:(UIViewController *)aViewController
 {
-    if (_manager == nil) {
-        _manager = [[LWShowViewManager alloc] init];
+    NSAssert(aViewController, @"aViewController参数不可以为空");
+    [self shareView];
+    [aViewController.view addSubview:shareView];
+    [shareView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(aViewController.view);
+    }];
+}
+
++ (void)showInViewController:(UIViewController *)aViewController completion:(void (^)(UIView * showView))aCompletion
+{
+    NSAssert(aViewController, @"aViewController参数不可以为空");
+    [self shareView];
+    [aViewController.view addSubview:shareView];
+    [shareView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(aViewController.view);
+    }];
+    
+    if (aCompletion) {
+        aCompletion(shareView);
     }
-    return _manager;
+}
+
++ (void)dismiss
+{
+    [shareView removeFromSuperview];
+    shareView = nil;
+}
+
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
+}
+
++ (void)testMethod
+{
+    NSLog(@"%@",self);
 }
 
 @end

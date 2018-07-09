@@ -8,90 +8,21 @@
 
 #import "LWShowViewManager.h"
 #import <Masonry.h>
-
-
 // 为多层级服务
 static NSMutableArray<NSArray *> *showViewArray;
 
+static BOOL tapDismiss = NO;
+
 @interface LWShowViewManager()
-@property (nonatomic, strong) UIView *showView;
+@property (nonatomic, copy) void (^dismissBlock)(void);
 @end
 
 
 @implementation LWShowViewManager
 
-- (void)show
-{
-    if (self.showView == nil) {
-        return;
-    }
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    [window addSubview:self.showView];
-    [self.showView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(window);
-    }];
-}
-
-//如果view为空
-- (void)showInView:(UIView *)aView
-{
-    if (self.showView == nil) {
-        return;
-    }
-    
-    if (aView == nil) {
-        UIViewController *rootVC = [LWShowViewManager getRootViewController];
-        aView = rootVC.view;
-    }
-    
-    [aView addSubview:self.showView];
-    [self.showView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(aView);
-    }];
-    NSLog(@"%@",aView);
-}
-
-//若传递的控制器为空
-- (void)showInViewController:(UIViewController *)aViewController
-{
-    if (self.showView == nil) {
-        return;
-    }
-    
-    if (aViewController == nil) {
-        aViewController = [LWShowViewManager getRootViewController];
-    }
-    
-    [aViewController.view addSubview:self.showView];
-    [self.showView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(aViewController.view);
-    }];
-    NSLog(@"%@",aViewController);
-    
-}
-
-+ (UIViewController *)getRootViewController {
-    
-    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    if (rootViewController.presentedViewController) {
-        return rootViewController.presentedViewController;
-    }
-    return rootViewController;
-}
-
-
-+ (void)showViewController:(UIViewController *)viewController dismiss:(void(^)(void))dismiss {
-    CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width / 2, [UIScreen mainScreen].bounds.size.height / 2);
-    [self showViewController:viewController size:size dismiss:dismiss];
-}
 
 + (void)showViewController:(UIViewController *)viewController size:(CGSize)size dismiss:(void(^)(void))dismiss {
     
-    [self showViewController:viewController cornerRadius:5. size:size dismiss:dismiss];
-}
-
-+ (void)showViewController:(UIViewController *)viewController cornerRadius:(CGFloat)cornerRadius size:(CGSize)size dismiss:(void(^)(void))dismiss{
-
     UIViewController *rootViewController = [self getRootViewController];
     UIView *backView = [[UIView alloc] init];
     backView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
@@ -100,9 +31,11 @@ static NSMutableArray<NSArray *> *showViewArray;
     [backView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(rootViewController.view);
     }];
-
     
-    viewController.view.layer.cornerRadius = cornerRadius;
+    if (tapDismiss) {
+        [backView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)]];
+    }
+    
     viewController.view.clipsToBounds = YES;
     [rootViewController.view addSubview:viewController.view];
     [rootViewController addChildViewController:viewController];
@@ -112,6 +45,8 @@ static NSMutableArray<NSArray *> *showViewArray;
     }];
     [self alertViewAddArray:@[backView,viewController]];
 }
+
+
 
 + (void)showView:(UIView *)view dismiss:(void(^)(void))dismiss {
     
@@ -124,11 +59,31 @@ static NSMutableArray<NSArray *> *showViewArray;
     [backView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(rootView);
     }];
-
+    
+    if (tapDismiss) {
+        [backView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)]];
+    }
+    
     [rootView addSubview:view];
     view.center = rootView.center;
     [self alertViewAddArray:@[backView,view]];
 }
+
+
++ (void)showViewTapDismissEnable:(BOOL)aEnable
+{
+    tapDismiss = aEnable;
+}
+
++ (UIViewController *)getRootViewController {
+    
+    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    if (rootViewController.presentedViewController) {
+        return rootViewController.presentedViewController;
+    }
+    return rootViewController;
+}
+
 
 + (void)alertViewAddArray:(NSArray *)array {
     if (showViewArray == nil) {
@@ -137,10 +92,7 @@ static NSMutableArray<NSArray *> *showViewArray;
     [showViewArray addObject:array];
 }
 
-
-
 + (void)dismiss {
-    
     NSArray *array = [showViewArray lastObject];
     [array enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[UIViewController class]]) {
@@ -162,5 +114,10 @@ static NSMutableArray<NSArray *> *showViewArray;
 
 + (BOOL)isHaveShowView {
     return showViewArray != nil;
+}
+
+- (void)dealloc
+{
+    NSLog(@"%s",__func__);
 }
 @end
