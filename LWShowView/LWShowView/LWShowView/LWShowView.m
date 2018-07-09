@@ -97,9 +97,5 @@ static LWShowView *shareView = nil;
     NSLog(@"%s",__func__);
 }
 
-+ (void)testMethod
-{
-    NSLog(@"%@",self);
-}
 
 @end

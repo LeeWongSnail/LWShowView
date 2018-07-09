@@ -75,5 +75,4 @@
  */
 + (void)dismiss;
 
-+ (void)testMethod;
 @end
